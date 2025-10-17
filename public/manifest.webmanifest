@@ -1,0 +1,35 @@
+{
+  "name": "S.O.R.O. - Ocorrências Bombeiros PE",
+  "short_name": "SORO",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0F47A9",
+  "theme_color": "#0F47A9",
+  "description": "Sistema de Ocorrências e Relatórios Operacionais do Corpo de Bombeiros de Pernambuco.",
+  "icons": [
+    {
+      "src": "/iconsPwa/S.O.R.O 180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+    
+      "src": "/iconsPwa/S.O.R.O 1024x1024.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/iconsPwa/S.O.R.O 1024x1024.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/iconsPwa/S.O.R.O 1024x1024.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

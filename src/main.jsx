@@ -5,23 +5,26 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App.jsx';
 import LoginPage from './pages/Login/LoginPage.jsx';
 import DashboardPage from './pages/Admin/DashboardPage.jsx';
+import OcorrenciasPage from './pages/Admin/OcorrenciasPage.jsx'; // <-- IMPORTA A NOVA PÁGINA
 import './index.css';
 
-// Criação do roteador com as definições de rota
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />, // O componente App agora serve como um layout geral
+    element: <App />,
     children: [
       {
-        index: true, // Isso faz com que DashboardPage seja a rota padrão para "/"
+        index: true,
         element: <DashboardPage />,
       },
       {
         path: 'login',
         element: <LoginPage />,
       },
-      // Outras rotas do admin podem ser adicionadas aqui no futuro
+      { // <-- ADICIONA A NOVA ROTA
+        path: 'ocorrencias',
+        element: <OcorrenciasPage />,
+      },
     ],
   },
 ]);

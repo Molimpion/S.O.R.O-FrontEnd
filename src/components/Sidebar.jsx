@@ -1,18 +1,34 @@
 import React from 'react';
+// CORREÇÃO: Importando 'Link' e 'useLocation' do react-router-dom
+import { Link, useLocation } from 'react-router-dom';
 
+// Importando os ícones
 import logoInterface from '../assets/Logo-interface.svg'; 
+import iconeSair from '../assets/Icone-Sair.png';
+
+// Importando os ícones padrão
 import iconePainel from '../assets/Icone-Painel.png';
 import iconeOcorrencias from '../assets/Icone-Ocorrencias.png';
 import iconeRelatorio from '../assets/Icone-Relatorio.png';
 import iconeUsuarios from '../assets/Icone-Usuarios.png';
-import iconeSair from '../assets/Icone-Sair.png';
+
+// Importando os ícones ATIVOS (hover)
+import iconePainelHover from '../assets/Icone-Painel-hover.png';
+import iconeOcorrenciasHover from '../assets/Icone-Ocorrencias-hover.png';
+import iconeRelatorioHover from '../assets/Icone-Relatorio-hover.png';
+import iconeUsuariosHover from '../assets/Icone-Usuarios-hover.png';
+
 
 function Sidebar({ isOpen, setIsOpen }) {
+  // Hook do react-router-dom que nos dá a localização atual
+  const location = useLocation();
+
+  // CORREÇÃO: Estrutura de dados atualizada com caminhos e os dois ícones
   const navItems = [
-    { name: 'Painel', icon: iconePainel, active: true },
-    { name: 'Ocorrências', icon: iconeOcorrencias, active: false },
-    { name: 'Relatório', icon: iconeRelatorio, active: false },
-    { name: 'Usuários', icon: iconeUsuarios, active: false },
+    { name: 'Painel', path: '/', iconDefault: iconePainel, iconActive: iconePainelHover },
+    { name: 'Ocorrências', path: '/ocorrencias', iconDefault: iconeOcorrencias, iconActive: iconeOcorrenciasHover },
+    { name: 'Relatório', path: '/relatorio', iconDefault: iconeRelatorio, iconActive: iconeRelatorioHover },
+    { name: 'Usuários', path: '/usuarios', iconDefault: iconeUsuarios, iconActive: iconeUsuariosHover },
   ];
 
   return (
@@ -32,32 +48,37 @@ function Sidebar({ isOpen, setIsOpen }) {
         
         <nav className="flex-1 px-4 py-6">
           <ul>
-            {navItems.map((item) => (
-              <li key={item.name} className="mb-3">
-                <a
-                  href="#"
-                  // CORREÇÃO: Alterado de rounded-lg para rounded-[30px]
-                  className={`flex items-center py-3 px-4 rounded-[30px] transition-colors duration-200 ${
-                    item.active
-                      ? 'bg-[#586680] text-white' 
-                      : 'text-[#061C43] hover:bg-[#586680] hover:text-white'
-                  }`}
-                >
-                  <img src={item.icon} alt={item.name} className="w-6 h-6" />
-                  <span className="ml-4 font-semibold">{item.name}</span>
-                </a>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              // Verifica se o caminho do item é o mesmo da URL atual
+              const isActive = location.pathname === item.path;
+
+              return (
+                <li key={item.name} className="mb-3">
+                  {/* CORREÇÃO: Usando o componente <Link> em vez de <a> */}
+                  <Link
+                    to={item.path}
+                    className={`flex items-center py-3 px-4 rounded-[30px] transition-colors duration-200 ${
+                      isActive
+                        ? 'bg-[#586680] text-white' 
+                        : 'text-white hover:bg-[#586680]'
+                    }`}
+                  >
+                    {/* CORREÇÃO: Renderiza o ícone ativo ou o padrão */}
+                    <img src={isActive ? item.iconActive : item.iconDefault} alt={item.name} className="w-6 h-6" />
+                    <span className="ml-4 font-semibold">{item.name}</span>
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
         
         <div className="px-4 py-6">
-          <a href="#" 
-             // CORREÇÃO: Aplicado o mesmo raio de borda para consistência
-             className="flex items-center justify-center py-3 px-4 rounded-[30px] text-[#061C43] hover:bg-[#586680] hover:text-white">
+          <Link to="/login" 
+             className="flex items-center justify-center py-3 px-4 rounded-[30px] text-white hover:bg-[#586680]">
             <img src={iconeSair} alt="Sair" className="w-6 h-6" />
             <span className="ml-3 font-semibold">Sair</span>
-          </a>
+          </Link>
         </div>
       </aside>
     </>

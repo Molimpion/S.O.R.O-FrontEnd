@@ -1,14 +1,12 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom'; // Importe o Outlet
+import './index.css';
 
 function App() {
+  // O Outlet renderizará o componente da rota correspondente
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center text-center p-4">
-      <h1 class="text-3xl text-green-100 font-bold underline">
-        Tudo Pronto!
-      </h1>
-      <p className="text-gray-300 mt-2">
-        Agora podemos focar no desenvolvimento.
-      </p>
+    <div>
+      <Outlet />
     </div>
   );
 }

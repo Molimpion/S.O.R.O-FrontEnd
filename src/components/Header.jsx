@@ -17,11 +17,7 @@ function Header({ title, userName, onMenuClick }) {
 
       <div className="flex items-center gap-6">
         {/* CORREÇÃO: Cor do ícone do sino alterada */}
-        <button className="text-[#061C43] hover:text-blue-800 relative">
-          <BellIcon />
-          <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500"></span>
-        </button>
-
+        
         {/* CORREÇÃO: Espessura da borda ajustada */}
         <button className="flex items-center gap-3 bg-white p-2 rounded-lg border-[0.5px] border-[#061C43] shadow-sm">
           <div className="w-9 h-9 rounded-md bg-orange-100 flex items-center justify-center font-bold text-orange-500 text-sm">

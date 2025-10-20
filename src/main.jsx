@@ -6,6 +6,10 @@ import App from './App.jsx';
 import LoginPage from './pages/Login/LoginPage.jsx';
 import DashboardPage from './pages/Admin/DashboardPage.jsx';
 import OcorrenciasPage from './pages/Admin/OcorrenciasPage.jsx';
+import GerenciamentoPage from './pages/Admin/GerenciamentoPage.jsx';
+import RelatoriosPage from './pages/Admin/RelatoriosPage.jsx';
+import UsuariosPage from './pages/Admin/UsuariosPage.jsx';
+import NovaOcorrenciaPage from './pages/Admin/NovaOcorrenciaPage.jsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -24,6 +28,22 @@ const router = createBrowserRouter([
       {
         path: 'ocorrencias',
         element: <OcorrenciasPage />,
+      },
+      {
+        path: 'ocorrencias/nova',
+        element: <NovaOcorrenciaPage />,
+      },
+      {
+        path: 'gerenciamento',
+        element: <GerenciamentoPage />,
+      },
+      {
+        path: 'relatorios',
+        element: <RelatoriosPage />,
+      },
+      {
+        path: 'usuarios',
+        element: <UsuariosPage />,
       },
     ],
   },

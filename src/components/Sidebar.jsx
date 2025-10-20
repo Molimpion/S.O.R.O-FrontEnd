@@ -69,7 +69,7 @@ function Sidebar({ isOpen, setIsOpen }) {
                   >
                     {/* CORREÇÃO: Renderiza o ícone ativo ou o padrão */}
                     <img src={isActive ? item.iconActive : item.iconDefault} alt={item.name} className="w-6 h-6" />
-                    <span className="ml-4 font-semibold">{item.name}</span>
+                    <span className="ml-4 font-medium">{item.name}</span>
                   </Link>
                 </li>
               );
@@ -88,7 +88,7 @@ function Sidebar({ isOpen, setIsOpen }) {
             } mb-3`}
           >
             <img src={iconeNovaOcorrencia} alt="Nova Ocorrência" className="w-6 h-6" />
-            <span className="ml-3 font-semibold">Nova Ocorrência</span>
+            <span className="ml-3 font-medium">Nova Ocorrência</span>
           </Link>
 
           <Link
@@ -100,7 +100,7 @@ function Sidebar({ isOpen, setIsOpen }) {
             }`}
           >
             <img src={iconeSair} alt="Sair" className="w-6 h-6" />
-            <span className="ml-3 font-semibold">Sair</span>
+            <span className="ml-3 font-medium">Sair</span>
           </Link>
         </div>
       </aside>

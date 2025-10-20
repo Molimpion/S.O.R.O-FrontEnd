@@ -3,7 +3,6 @@ import React from 'react';
 // --- Ícones para o Header ---
 const MenuIcon = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>;
 const BellIcon = () => <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>;
-const ChevronDownIcon = () => <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>;
 
 function Header({ title, userName, onMenuClick }) {
   return (
@@ -31,8 +30,7 @@ function Header({ title, userName, onMenuClick }) {
           <div className="text-left hidden md:block">
             <p className="text-xs text-gray-400">Bem-vindo,</p>
             <span className="font-semibold text-sm text-gray-700">{userName}</span>
-          </div>
-          <ChevronDownIcon />
+          </div>       
         </button>
       </div>
     </header>

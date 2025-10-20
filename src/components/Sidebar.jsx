@@ -3,20 +3,23 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 // Importando os ícones
-import logoInterface from '../assets/Logo-interface.svg'; 
+import logoInterface from '../assets/Logo-interface.svg';
 import iconeSair from '../assets/Icone-Sair.png';
 
 // Importando os ícones padrão
 import iconePainel from '../assets/Icone-Painel.png';
 import iconeOcorrencias from '../assets/Icone-Ocorrencias.png';
-import iconeRelatorio from '../assets/Icone-Relatorio.png';
+import iconeRelatorios from '../assets/Icone-Relatorios.png';
 import iconeUsuarios from '../assets/Icone-Usuarios.png';
+import iconeGerenciamento from '../assets/Icone-Gerenciamento.png';
+import iconeNovaOcorrencia from '../assets/Icone-NovaOcorrencia.png';
 
-// Importando os ícones ATIVOS (hover)
-import iconePainelHover from '../assets/Icone-Painel-hover.png';
-import iconeOcorrenciasHover from '../assets/Icone-Ocorrencias-hover.png';
-import iconeRelatorioHover from '../assets/Icone-Relatorio-hover.png';
-import iconeUsuariosHover from '../assets/Icone-Usuarios-hover.png';
+// Importando os ícones ATIVOS (hover) - nomes atualizados para corresponder aos arquivos
+import iconePainelHover from '../assets/Icone-Painel-Hover.png';
+import iconeOcorrenciasHover from '../assets/Icone-Ocorrencias-Hover.png';
+import iconeRelatoriosHover from '../assets/Icone-Relatorios-Hover.png';
+import iconeUsuariosHover from '../assets/Icone-Usuarios-Hover.png';
+import iconeGerenciamentoHover from '../assets/Icone-Gerenciamento-Hover.png';
 
 
 function Sidebar({ isOpen, setIsOpen }) {
@@ -27,8 +30,9 @@ function Sidebar({ isOpen, setIsOpen }) {
   const navItems = [
     { name: 'Painel', path: '/', iconDefault: iconePainel, iconActive: iconePainelHover },
     { name: 'Ocorrências', path: '/ocorrencias', iconDefault: iconeOcorrencias, iconActive: iconeOcorrenciasHover },
-    { name: 'Relatório', path: '/relatorio', iconDefault: iconeRelatorio, iconActive: iconeRelatorioHover },
+    { name: 'Relatório', path: '/relatorios', iconDefault: iconeRelatorios, iconActive: iconeRelatoriosHover },
     { name: 'Usuários', path: '/usuarios', iconDefault: iconeUsuarios, iconActive: iconeUsuariosHover },
+    { name: 'Gerenciamento', path: '/gerenciamento', iconDefault: iconeGerenciamento, iconActive: iconeGerenciamentoHover },
   ];
 
   return (
@@ -59,8 +63,8 @@ function Sidebar({ isOpen, setIsOpen }) {
                     to={item.path}
                     className={`flex items-center py-3 px-4 rounded-[30px] transition-colors duration-200 ${
                       isActive
-                        ? 'bg-[#586680] text-white' 
-                        : 'text-white hover:bg-[#586680]'
+                        ? 'bg-[#586680]/30 text-[#061C43]' 
+                        : 'text-[#061C43] hover:bg-[#586680]/30'
                     }`}
                   >
                     {/* CORREÇÃO: Renderiza o ícone ativo ou o padrão */}
@@ -74,8 +78,27 @@ function Sidebar({ isOpen, setIsOpen }) {
         </nav>
         
         <div className="px-4 py-6">
-          <Link to="/login" 
-             className="flex items-center justify-center py-3 px-4 rounded-[30px] text-white hover:bg-[#586680]">
+          {/* Nova Ocorrência: posicionada acima do botão Sair */}
+          <Link
+            to="/ocorrencias/nova"
+            className={`flex items-center justify-center py-3 px-4 rounded-[30px] transition-colors duration-200 text-[#061C43] ${
+              location.pathname === '/ocorrencias/nova'
+                ? 'bg-[#0F377E]/30'
+                : 'hover:bg-[#0F377E]/30'
+            } mb-3`}
+          >
+            <img src={iconeNovaOcorrencia} alt="Nova Ocorrência" className="w-6 h-6" />
+            <span className="ml-3 font-semibold">Nova Ocorrência</span>
+          </Link>
+
+          <Link
+            to="/login"
+            className={`flex items-center justify-center py-3 px-4 rounded-[30px] transition-colors duration-200 text-[#061C43] ${
+              location.pathname === '/login'
+                ? 'bg-[#0F377E]/30'
+                : 'hover:bg-[#0F377E]/30'
+            }`}
+          >
             <img src={iconeSair} alt="Sair" className="w-6 h-6" />
             <span className="ml-3 font-semibold">Sair</span>
           </Link>

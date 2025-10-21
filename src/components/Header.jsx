@@ -17,7 +17,7 @@ function Header({ title, userName, onMenuClick }) {
 
       <div className="flex items-center gap-6">
         {/* CORREÇÃO: Cor do ícone do sino alterada */}
-        
+       
         {/* CORREÇÃO: Espessura da borda ajustada */}
         <button className="flex items-center gap-3 bg-white p-2 rounded-lg border-[0.5px] border-[#061C43] shadow-sm">
           <div className="w-9 h-9 rounded-md bg-orange-100 flex items-center justify-center font-bold text-orange-500 text-sm">
@@ -26,7 +26,7 @@ function Header({ title, userName, onMenuClick }) {
           <div className="text-left hidden md:block">
             <p className="text-xs text-gray-400">Bem-vindo,</p>
             <span className="font-semibold text-sm text-gray-700">{userName}</span>
-          </div>       
+          </div>
         </button>
       </div>
     </header>

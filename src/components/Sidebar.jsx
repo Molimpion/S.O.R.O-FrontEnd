@@ -15,7 +15,7 @@ import iconeGerenciamento from '../assets/Icone-Gerenciamento.png';
 import iconeNovaOcorrencia from '../assets/Icone-NovaOcorrencia.png';
 
 // Importando os ícones ATIVOS (hover) - nomes atualizados para corresponder aos arquivos
-import iconePainelHover from '../assets/Icone-Painel-Hover.png';
+import iconePainelHover from '../assets/Icone-Painel-hover.png';
 import iconeOcorrenciasHover from '../assets/Icone-Ocorrencias-Hover.png';
 import iconeRelatoriosHover from '../assets/Icone-Relatorios-Hover.png';
 import iconeUsuariosHover from '../assets/Icone-Usuarios-Hover.png';
